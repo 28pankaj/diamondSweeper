@@ -1,0 +1,52 @@
+      [ng\:cloak],
+      [ng-cloak],
+      [data-ng-cloak],
+      [x-ng-cloak],
+      .ng-cloak,
+      .x-ng-cloak {
+          display: none !important;
+      }
+
+      tbody>tr>td {
+          border: 3px solid #ccc !important;
+          vertical-align: middle !important;
+      }
+
+      .emptyBox {
+          position: relative;
+          background: white;
+          text-align: center;
+          cursor: pointer;
+      }
+
+      .emptyBox img {}
+
+      .emptyBox small {
+          position: absolute;
+          top: 0;
+      }
+
+      .tableInnerLay {
+          position: relative;
+          margin: 15px;
+      }
+
+      .showOuterLay {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          background: rgba(0, 0, 0, 0.6);
+          color: #ffff;
+          text-align: center;
+      }
+
+      .showOuterLay h3 {
+          margin-top: 30%;
+      }
+
+      .showOuterLay i{
+          font-size: 19px;
+          cursor: pointer;
+      }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Diamond Sweeper</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body ng-cloak ng-app="mydiamondGame">
+    <div class="container" ng-controller="diamondGameCtrl">
+        <h2 class="text-center">Diamond Sweeper</h2>
+        <div class="row">
+            <h4 class="text-center" ng-show="diamondCountLength">Hurray! you found {{diamondCount}} diamond</h4>
+            <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
+                <div class="tableInnerLay">
+                    <table class="table" style="background: gray;">
+                        <tbody>
+                            <tr ng-repeat="row in diamondField.rows">
+                                <td class="emptyBox" ng-repeat="spot in row.spots" ng-click="spot.disable || uncoverSpot(spot)" ng-disabled="spot.disable">
+                                    <img ng-if="spot.isCovered" ng-src="images/question.png" class="img-responsive">
+                                    <img ng-if="!spot.isCovered && spot.content == 'empty'" ng-src="images/arrow.png" class="img-responsive" />
+                                    <img ng-if="!spot.isCovered && spot.content == 'diamond'" ng-src="images/diamond.png" class="img-responsive" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="showOuterLay" ng-if="hasLostMessageVisible || isWinMessageVisible">
+                    <h3>Contgratulation<br> <br>Your Score is: {{attempts}} <br><br>
+                    Please reload the game</h3><br>
+                     <i class="fa fa-sync-alt" ng-click="reloadPage();"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="controller/diamondGameCtrl.js"></script>
+</body>
+
+</html>
